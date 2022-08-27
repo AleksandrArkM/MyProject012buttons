@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name">NMedia</string>
+    <string name="greeting">NMedia</string>
+    <string name="app_likes_input" translatable="false">138</string>
+    <string name="app_likes" translatable="false">"%1$s%2$s"</string>
+
+    <string name="app_reposts" translatable="false">1200</string>
+    <string name="app_views" translatable="false">1M</string>
+    <string name="post_date" translatable="false">21 мая в 18:36</string>
+    <string name="nmedia">NMedia!</string>
+    <string name="NetologyName_title" translatable="false"> Нетология - университет интернет-профессий будущего.</string>
+    <string name="Netology_profile" translatable="false">
+Привет, это Нетология.
+</string>
+    <string name="remove">remove</string>
+    <string name="edit">edit</string>
+    <string name="textEditNotif">Edit this post</string>
+
+</resources>

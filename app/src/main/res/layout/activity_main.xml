@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/postsRecyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        app:layout_constraintBottom_toTopOf="@id/postText"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0"
+        tools:layout_editor_absoluteX="0dp"
+        tools:listitem="@layout/post_item" />
+
+    <androidx.constraintlayout.widget.Barrier
+        android:id="@+id/toolsTopBarrier"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:barrierDirection="top"
+        />
+
+    <EditText
+        android:id="@+id/contentEditText"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@android:color/transparent"
+        android:hint="Post text"
+        android:importantForAutofill="no"
+        android:inputType="textMultiLine"
+        android:padding="16dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/toolsTopBarrier"
+        app:layout_constraintEnd_toStartOf="@id/saveButton"
+        />
+
+    <ImageButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/saveButton"
+        android:checkable="true"
+        android:background="@android:color/transparent"
+        android:layout_marginTop="16dp"
+        android:src="@drawable/ic_save_24"
+        android:contentDescription="Save"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@id/contentEditText"
+        tools:ignore="ImageContrastCheck"
+        />
+
+    <androidx.constraintlayout.widget.Group
+        android:id="@+id/group"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        app:constraint_referenced_ids="cancel, pen, postText"
+        />
+
+    <ImageButton
+        android:id="@+id/cancel"
+        android:layout_width="54dp"
+        android:layout_height="54dp"
+        android:layout_marginTop="@dimen/common_spacing"
+        android:background="@android:color/transparent"
+        android:contentDescription="Cancel editing"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:visibility="visible"
+        app:layout_constraintBottom_toTopOf="@id/saveButton"
+        app:srcCompat = "@drawable/ic_baseline_cancel_24"
+        />
+
+    <ImageView
+        android:id="@+id/pen"
+        android:layout_width="36dp"
+        android:layout_height="36dp"
+        android:src="@drawable/ic_baseline_edit_24"
+        app:layout_constraintBottom_toTopOf="@id/toolsTopBarrier"
+        app:layout_constraintStart_toStartOf="parent"
+        android:visibility="visible"
+        android:contentDescription="image editing pen" />
+
+    <TextView
+        android:id="@+id/postText"
+        android:layout_width="wrap_content"
+        android:background="@android:color/transparent"
+        android:layout_height="36dp"
+        app:layout_constraintBottom_toTopOf="@id/toolsTopBarrier"
+        app:layout_constraintStart_toEndOf="@id/pen"
+        app:layout_constraintEnd_toStartOf="@id/cancel"
+        android:padding="8dp"
+        android:importantForAutofill="no"
+        android:inputType="textMultiLine"
+        android:text="@string/textEditNotif"
+        android:textColor="@color/black"
+        />
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
